@@ -1,13 +1,10 @@
 class Solution {
 public:
     int minOperations(vector<int>& nums) {
-        sort(nums.begin(),nums.end());
+        //sort(nums.begin(),nums.end());
         unordered_map<int,int> m;
         for(auto i:nums){
             m[i]++;
-        }
-        for(auto i:m){
-            cout<<i.first<<" "<<i.second<<endl;
         }
         int ans=0;
         for(auto i:m){
