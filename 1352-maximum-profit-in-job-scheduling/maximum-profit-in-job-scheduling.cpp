@@ -3,17 +3,17 @@
 class Solution {
 public:
     int jobScheduling(vector<int>& startTime, vector<int>& endTime, vector<int>& profit) {
-        int numJobs = profit.size(); // Number of jobs
-        vector<tuple<int, int, int>> jobs(numJobs);
+        //int numJobs = profit.size(); // Number of jobs
+        vector<tuple<int, int, int>> jobs(profit.size());
       
-        for (int i = 0; i < numJobs; ++i) {
+        for (int i = 0; i < profit.size(); ++i) {
             jobs[i] = {endTime[i], startTime[i], profit[i]};
         }
       
         sort(jobs.begin(), jobs.end());
-        vector<int> dp(numJobs + 1);
+        vector<int> dp(profit.size() + 1);
       
-        for (int i = 0; i < numJobs; ++i) {
+        for (int i = 0; i < profit.size(); ++i) {
             auto [endTime, startTime, profit] = jobs[i];
           
             int latestNonConflictJobIndex = upper_bound(jobs.begin(), jobs.begin() + i, startTime, [&](int time, const auto& job) -> bool {
@@ -23,6 +23,6 @@ public:
             dp[i + 1] = max(dp[i], dp[latestNonConflictJobIndex] + profit);
         }
       
-        return dp[numJobs];
+        return dp[profit.size()];
     }
 };
