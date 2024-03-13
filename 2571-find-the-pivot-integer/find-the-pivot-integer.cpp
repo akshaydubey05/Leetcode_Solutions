@@ -17,7 +17,6 @@ public:
                 leftsum=0;
                 rightsum=0;
             }
-            cout<<leftsum<<" "<<rightsum<<endl;
         }
         return -1;
     }
