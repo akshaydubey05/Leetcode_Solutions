@@ -13,10 +13,8 @@ public:
             if(leftsum==rightsum){
                 return i;
             }
-            else{
                 leftsum=0;
                 rightsum=0;
-            }
         }
         return -1;
     }
