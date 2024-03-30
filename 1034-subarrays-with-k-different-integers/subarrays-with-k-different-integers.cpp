@@ -27,6 +27,9 @@ public:
     }
     
     int subarraysWithKDistinct(vector<int>& nums, int k) {
+        std::ios_base::sync_with_stdio(false);
+        cin.tie(NULL);
+        cout.tie(NULL);
         return countSubarraysWithAtMostKDistinct(nums,k)-countSubarraysWithAtMostKDistinct(nums,k-1);
     }
 };
