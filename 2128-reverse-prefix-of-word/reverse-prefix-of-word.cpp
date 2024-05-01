@@ -1,10 +1,18 @@
 class Solution {
 public:
     string reversePrefix(string word, char ch) {
-        int j = word.find(ch);
-        if (j != -1) {
-            reverse(word.begin(), word.begin() + j + 1);
+        string ans="";
+        bool once = true;
+        for(char c: word){
+            if(c == ch && once){
+                ans+=c;
+                reverse(ans.begin(),ans.end());
+                once = false;
+            }
+            else{
+                ans += c;
+            }
         }
-        return word;
+        return ans;
     }
 };
