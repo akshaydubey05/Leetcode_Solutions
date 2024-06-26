@@ -13,7 +13,8 @@ public:
 
     int minCostClimbingStairs(vector<int>& cost) {
         int n=cost.size();
-        vector<int> dp(n,-1);
-        return min(solve(n-1,cost,dp),solve(n-2,cost,dp));
+        cost.push_back(0);
+        vector<int> dp(n+1,-1);
+        return solve(n,cost,dp);
     }
 };
