@@ -18,13 +18,24 @@ public:
         }
         return dp[n];
     }
+    int solve2(int n,vector<int> &cost){
+        int prev1=cost[0];
+        int prev2=cost[1];
+        for(int i=2;i<=n;i++){
+            int curr=cost[i]+min(prev1,prev2);
+            prev1=prev2;
+            prev2=curr;
+        }
+        return prev2;
+    }
 
     int minCostClimbingStairs(vector<int>& cost) {
         int n=cost.size();
         cost.push_back(0);
-        vector<int> dp(n+1,-1);
-        int x=solve1(n,cost,dp);
-        return x;
+        //vector<int> dp(n+1,-1);
+        //int x=solve1(n,cost,dp);
+        int y=solve2(n,cost);
+        return y;
     }
 
 };
