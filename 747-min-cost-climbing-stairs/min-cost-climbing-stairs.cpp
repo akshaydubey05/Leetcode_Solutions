@@ -1,6 +1,6 @@
 class Solution {
 public:
-    int solve(int n, vector<int> &cost, vector<int> &dp){
+    int solve(int n,vector<int> &cost,vector<int> &dp){
         if(n<=1){
             return cost[n];
         }
@@ -15,6 +15,8 @@ public:
         int n=cost.size();
         cost.push_back(0);
         vector<int> dp(n+1,-1);
-        return solve(n,cost,dp);
+        int x=solve(n,cost,dp);
+        return x;
     }
+
 };
