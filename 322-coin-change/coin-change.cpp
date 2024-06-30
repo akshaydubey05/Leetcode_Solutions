@@ -20,6 +20,17 @@ public:
         dp[amount]=mini;
         return dp[amount];
     }
+    int solvetab(vector<int> &coins,vector<int> &dp, int amount){
+        dp[0]=0;
+        for(int i=1;i<=amount;i++){
+            for(int j=0;j<coins.size();j++){
+                if(i-coins[j]>=0 && dp[i-coins[j]]!=INT_MAX){
+                    dp[i]=min(dp[i],1+dp[i-coins[j]]);
+                }
+            }
+        }
+        return dp[amount];
+    }
     int solverec(vector<int> &coins, int amount){
         if(amount==0){
             return 0;
@@ -45,11 +56,20 @@ public:
             return -1;
         }
         return x; */
-        vector<int> dp(amount+1,-1);
+
+
+        /* vector<int> dp(amount+1,-1);
         int y=solve(coins,dp,amount);
         if(y==INT_MAX){
             return -1;
         }
-        return y;
+        return y; */
+
+        vector<int> dp(amount+1,INT_MAX);
+        int x=solvetab(coins,dp,amount);
+        if(x==INT_MAX){
+            return -1;
+        }
+        return x;
     }
 };
