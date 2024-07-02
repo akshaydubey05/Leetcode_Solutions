@@ -1,6 +1,9 @@
 class Solution {
 public:
     vector<int> intersect(vector<int>& nums1, vector<int>& nums2) {
+        ios_base::sync_with_stdio(false);
+        cin.tie(NULL);
+        cout.tie(NULL);
         unordered_map<int,int>m1,m2;
         for(int i=0;i<nums1.size();i++){
             m1[nums1[i]]++;
