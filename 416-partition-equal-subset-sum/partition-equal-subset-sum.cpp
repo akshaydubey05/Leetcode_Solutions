@@ -7,6 +7,9 @@ private:
         if(index == 0){
             return nums[index] == sum;
         }
+        if(sum == 0){
+            return true;
+        }
         
         if(dp[index][sum] != -1){
             return dp[index][sum];
