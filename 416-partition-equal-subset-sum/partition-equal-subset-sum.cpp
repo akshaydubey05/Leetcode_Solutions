@@ -1,12 +1,13 @@
 class Solution {
 private:
     bool find(int sum, int index, vector<vector<int>>& dp, vector<int>& nums){
+        ios_base::sync_with_stdio(false);
+        cin.tie(NULL);
+        cout.tie(NULL);
         if(index == 0){
             return nums[index] == sum;
         }
-        if(sum == 0){
-            return true; 
-        }
+        
         if(dp[index][sum] != -1){
             return dp[index][sum];
         }
