@@ -2,8 +2,12 @@ class Solution {
 public:
     int countPalindromicSubsequence(string s) {
         int res = 0;
-        unordered_set<char> uniqueChars(s.begin(), s.end());
-        for (char c : uniqueChars) {
+        unordered_set<char> st(s.begin(), s.end());
+        for(auto i : st){
+            cout<<i<<" ";
+        }
+        
+        for (char c : st) {
             int start = -1, end = 0;
             for (int i = 0; i < s.size(); i++) {
                 if (s[i] == c) {
@@ -11,11 +15,11 @@ public:
                     end = i;
                 }
             }
-            unordered_set<char> midChars;
+            unordered_set<char> st1;
             for (int i = start + 1; i < end; i++) {
-                midChars.insert(s[i]);
+                st1.insert(s[i]);
             }
-            res += midChars.size();
+            res += st1.size();
         }
         return res;
     }
