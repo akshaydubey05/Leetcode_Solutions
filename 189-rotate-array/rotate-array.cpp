@@ -7,7 +7,7 @@ public:
             k=k%n;
         }
         int x=0, i=n-k;
-        while(x<n && n!=1){
+        while(x<n){
             if(i>n-1){
                 i=0;
             }
@@ -15,8 +15,6 @@ public:
             i++;
             x++;
         }
-        if(n!=1){
-            nums=a;
-        }
+        nums=a;
     }
 };
