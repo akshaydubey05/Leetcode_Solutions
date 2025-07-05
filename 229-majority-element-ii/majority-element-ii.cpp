@@ -23,22 +23,22 @@ public:
             }
         }
         c1=0,c2=0;
-            vector<int> ss;
-            for(int i=0;i<nums.size();i++){
-                if(nums[i] == e1){
-                    c1++;
-                }
-                if(nums[i] == e2){
-                    c2++;
-                }
+        vector<int> ss;
+        for(int i=0;i<nums.size();i++){
+            if(nums[i] == e1){
+                c1++;
             }
-            vector<int> ans;
-            if(c1 >(nums.size()/3)){
-                ans.push_back(e1);
+            if(nums[i] == e2){
+                c2++;
             }
-            if(c2 >(nums.size()/3)){
-                ans.push_back(e2);
-            }
-            return ans;
+        }
+        vector<int> ans;
+        if(c1 >(nums.size()/3)){
+            ans.push_back(e1);
+        }
+        if(c2 >(nums.size()/3)){
+            ans.push_back(e2);
+        }
+        return ans;
     }
 };
