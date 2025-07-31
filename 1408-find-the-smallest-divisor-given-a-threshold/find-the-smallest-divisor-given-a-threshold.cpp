@@ -11,7 +11,7 @@ public:
             int mid = low+(high-low)/2;
             int sum=0;
             for(int i=0;i<n.size();i++){
-                sum+=ceil((double)(n[i]) / (double)(mid));
+                sum+=ceil((double)(n[i])/(double)(mid));
             }
             if(sum<=t){
                 high=mid-1;
