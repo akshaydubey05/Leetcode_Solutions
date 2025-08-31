@@ -1,15 +1,19 @@
 class Solution {
 public:
-    vector<int> twoSum(vector<int>& nums, int target) {
-        int l=0, r=nums.size()-1;
-        unordered_map<int,int> mp;
-        for(int i=0;i<nums.size();i++){
-            int x = target - nums[i];
-            if(mp.find(x)!=mp.end()){
-                return {mp[x],i};
+    vector<int> twoSum(vector<int>& n, int t) {
+        vector<int> ans;
+        for(int i=0;i<n.size();i++){
+            for(int j=0;j<n.size();j++){ // N^2
+                if(i!=j){
+                    int x = n[i]+n[j];
+                    if(x==t){
+                        ans.push_back(i);
+                        ans.push_back(j);
+                        return ans;
+                    } 
+                }   
             }
-            mp[nums[i]] = i;
         }
-        return {-1,-1};
+        return ans;
     }
 };
