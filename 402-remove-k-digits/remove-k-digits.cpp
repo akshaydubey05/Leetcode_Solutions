@@ -23,7 +23,7 @@ public:
             result += stack.top();
             stack.pop();
         }
-        std::reverse(result.begin(), result.end()); // Reverse to get the correct order
+        reverse(result.begin(), result.end()); // Reverse to get the correct order
         
         // Remove leading zeros
         size_t pos = result.find_first_not_of('0');
