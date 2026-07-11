@@ -1,19 +1,14 @@
 class Solution {
 public:
     vector<int> twoSum(vector<int>& n, int t) {
-        vector<int> ans;
+        map<int,int> mp;
         for(int i=0;i<n.size();i++){
-            for(int j=0;j<n.size();j++){ // N^2
-                if(i!=j){
-                    int x = n[i]+n[j];
-                    if(x==t){
-                        ans.push_back(i);
-                        ans.push_back(j);
-                        return ans;
-                    } 
-                }   
+            int cnt=t-n[i];
+            if(mp.find(cnt)!=mp.end()){
+                return {mp[cnt],i};
             }
+            mp[n[i]]=i;
         }
-        return ans;
+        return {-1,-1};
     }
 };
