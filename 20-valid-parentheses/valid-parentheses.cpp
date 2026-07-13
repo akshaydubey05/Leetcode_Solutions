@@ -7,7 +7,10 @@ public:
                 t.push(i);
             }
             else{
-                if(t.empty() || i==')' && t.top()!='(' || i==']' && t.top()!='[' || i=='}' && t.top()!='{'){
+                if(t.empty() || 
+                (i==')' && t.top()!='(') || 
+                (i==']' && t.top()!='[') || 
+                (i=='}' && t.top()!='{')){
                     return false;
                 }
                 else{
