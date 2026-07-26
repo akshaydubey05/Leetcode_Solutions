@@ -1,10 +1,10 @@
 class Solution {
 public:
-    int maximumProduct(vector<int>& A) {
-        ranges::sort(A);
-        return max(
-            A.back() * A[A.size() - 2] * A[A.size() - 3],
-            A.back() * A.front() * A[1]
-        );
+    int maximumProduct(vector<int>& nums) {
+        sort(nums.begin(),nums.end());
+        int n=nums.size();
+        int negans = nums[0]*nums[1]*nums[n-1];
+        int posans = nums[n-1]*nums[n-2]*nums[n-3];
+        return max(negans,posans);
     }
 };
